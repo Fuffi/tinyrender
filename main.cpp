@@ -7,7 +7,7 @@ void line(int x0, int y0, int x1, int y1, TGAImage &image, TGAColor color) {
 		int dx = x1-x0;
 		int dy = y1-y0;
 
-    if (x0>x1) {
+    if (x0 > x1) {
         std::swap(x0, x1);
         std::swap(y0, y1);
     }
@@ -26,7 +26,7 @@ void line(int x0, int y0, int x1, int y1, TGAImage &image, TGAColor color) {
 
     int y = y0;
 
-    for (int x=x0; x<=x1; x++) {
+    for (int x = x0; x <= x1; ++x) {
         if (steep) {
             image.set(y, x, color);
         } else {
