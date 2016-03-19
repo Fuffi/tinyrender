@@ -11,13 +11,12 @@ void line(const int x0, const int y0, const int x1, const int y1, TGAImage& imag
 	int y = y0;
 
 	for (int x = x0; x <= x1; ++x) {
-		if (d_error > 0) {
-			++y;
-			d_error -= 2 * dx;
-		}
-
 		image.set(x, y, color);
 		d_error += 2 * dy;
+		if (d_error > 0) {
+			y += 1;
+			d_error -= 2 * dx;
+		}
 	}
 }
 
